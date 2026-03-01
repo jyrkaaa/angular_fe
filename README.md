@@ -1,5 +1,7 @@
 # AngularApp
 
+For production, currently needs to manally disable blocking of unsafe (mixed content) fetches. As the backend is currently on HTTP and vercel on HTTPS, needs manual override.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
 
 ## Development server
