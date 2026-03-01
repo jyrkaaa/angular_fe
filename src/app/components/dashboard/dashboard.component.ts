@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit,} from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import {UserDto} from '../../models/dto/userDto';
 
@@ -10,14 +10,20 @@ import {UserDto} from '../../models/dto/userDto';
   ]
 })
 export class DashboardComponent implements OnInit {
-
-
   public users: UserDto[] = [];
+
   constructor(
-    private readonly apiService: ApiService) {
-  }
+    private readonly apiService: ApiService
+  ) {}
 
   async ngOnInit(): Promise<void> {
-        this.users = await this.apiService.getUsers();
+    try {
+      this.users = await this.apiService.getUsers();
+    } catch (error) {
+      console.error('Error loading users:', error);
+      this.users = [];
     }
+  }
 }
+
+
