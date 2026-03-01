@@ -3,6 +3,7 @@
 /out-tsc/
 /tmp/
 /build/
+.angular/
 
 # Node dependencies
 /node_modules/
